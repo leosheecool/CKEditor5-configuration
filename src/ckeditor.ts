@@ -48,8 +48,9 @@ import ImageStyleUtils from '@ckeditor/ckeditor5-image/src/imagestyle/utils';
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
 // See https://ckeditor.com/docs/ckeditor5/latest/installation/plugins/installing-plugins.html for details.
 
+// @ts-expect-error
 class Editor extends InlineEditor {
-  public static override builtinPlugins = [
+  public static override readonly builtinPlugins = [
     FindAndReplace,
     Alignment,
     Autoformat,
@@ -86,7 +87,7 @@ class Editor extends InlineEditor {
     Undo
   ];
 
-  public static override defaultConfig: EditorConfig = {
+  public static override readonly defaultConfig: EditorConfig = {
     toolbar: {
       items: [
         'undo',
